@@ -1,0 +1,14 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+const { title, url, imagePath } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
+if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
+---
+<a href={url}>
+    <article class="bg-white border border-black mx-8 p-7 pb-5 rounded-[2rem] shadow-[0.25rem_0.25rem_0] shadow-black relative bottom-0 right-0 hover:bottom-1 hover:right-1 hover:shadow-[0.5rem_0.5rem_0] transition-all">
+        <Image src={images[imagePath]()} alt="image" class="w-full bg-neutral-300 border border-black rounded-2xl aspect-square" />
+        <h2 class="mt-4 font-semibold text-4xl">{ title }</h2>
+    </article>
+</a>
