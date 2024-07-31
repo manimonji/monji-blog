@@ -4,8 +4,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Monji Blog";
 ---
 <BaseLayout pageTitle={pageTitle}>
-	<h1 class="text-6xl text-center font-bold mt-11">Monji Blog</h1>
-	<section class="flex flex-col mt-11">
-		<article class="border border-black"></article>
+	<h1 class="text-6xl text-center font-semibold mt-11 mx-8">Monji Blog</h1>
+	<section class="flex flex-col mt-9">
+		<article class="border border-black mx-8 p-7 pb-5 rounded-[2rem] shadow-[0.25rem_0.25rem_0] shadow-black">
+			<img src="#" alt="image" class="w-full bg-neutral-300 border border-black rounded-2xl aspect-square">
+			<h2 class="mt-4 font-semibold text-4xl">Why Svelte Is Great?</h2>
+		</article>
 	</section>
 </BaseLayout>
